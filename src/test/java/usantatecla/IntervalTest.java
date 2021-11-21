@@ -87,6 +87,15 @@ public class IntervalTest {
   }
 
 
+  @Test void givenIntervalWhenIntervalWith5ElementThenInterseccionIs5ElementIntervalThenTrue(){
+
+    Interval interval1 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
+    Interval interval2 = new Interval(new Min(this.right.value-5), new Max(this.right.getEquals()+5) );
+
+    assertTrue(interval1.intersection(interval2).equals(new Interval (new Min(this.right.value-5),new Max(this.right.getEquals()))));
+
+  }
+
  /* @Test void givenIntervalWhenDisjointedIntervalThenInterseccionIsSameIntervalThenFalse(){
 
     Interval interval1 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
