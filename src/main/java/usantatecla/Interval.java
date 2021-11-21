@@ -16,6 +16,7 @@ public class Interval {
 	}
 
 	public Interval intersection(Interval interval){
+
 		return null;
 	}
 

@@ -68,10 +68,11 @@ public class IntervalTest {
 
 
   @Test void givenIntervalWhenSameIntervalThenInterseccionIsSameIntervalThenTrue(){
-    Interval interval1 = this.intervalBuilder.build();
-    Interval interval2 = this.intervalBuilder.build();
 
-    assertTrue(interval1.intersection(interval2).equals(interval2));
+    Interval interval1 = new Interval(new Min(0), new Max(0));
+    Interval interval2 = new Interval(new Min(0), new Max(0));
+
+    assertTrue(interval1.intersection(interval2).equals(interval1));
 
   }
 
