@@ -19,8 +19,8 @@ public class Interval {
 
 		if (this.equals(interval))
 			return new Interval(min, max);
-		else if (!this.max.isWithin(interval.min.value))
-			return null;
+		else if (this.max.isWithin(interval.min.value))
+			return new Interval(interval.min, interval.max);
 		else
 			return null;
 
