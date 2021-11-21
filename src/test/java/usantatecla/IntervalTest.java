@@ -66,4 +66,15 @@ public class IntervalTest {
     assertFalse(interval.include(right.getGreater()));
   }
 
+
+  @Test void givenIntervalWhenSameIntervalThenInterseccionIsSameIntervalThenTrue(){
+    Interval interval1 = this.intervalBuilder.build();
+    Interval interval2 = this.intervalBuilder.build();
+
+    assertTrue(interval1.intersection(interval2).equals(interval2));
+
+  }
+
+  //Tengo que completar el equals del conjunto con elementos
+
 }
