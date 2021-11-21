@@ -67,14 +67,17 @@ public class IntervalTest {
   }
 
 
-  @Test void givenIntervalWhenSameIntervalThenInterseccionIsSameIntervalThenTrue(){
+  @Test void givenEmptyIntervalWhenSameIntervalThenInterseccionIsSameIntervalThenTrue(){
 
-    Interval interval1 = new Interval(new Min(0), new Max(0));
-    Interval interval2 = new Interval(new Min(0), new Max(0));
+    Interval interval1 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
+    Interval interval2 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
 
     assertTrue(interval1.intersection(interval2).equals(interval1));
+    assertTrue(interval1.intersection(interval2).equals(interval2));
 
   }
+
+
 
   //Tengo que completar el equals del conjunto con elementos
 
