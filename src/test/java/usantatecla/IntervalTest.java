@@ -67,7 +67,7 @@ public class IntervalTest {
   }
 
 
-  @Test void givenEmptyIntervalWhenSameIntervalThenInterseccionIsSameIntervalThenTrue(){
+  @Test void givenIntervalWhenSameIntervalThenInterseccionIsSameIntervalThenTrue(){
 
     Interval interval1 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
     Interval interval2 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
@@ -78,7 +78,17 @@ public class IntervalTest {
   }
 
 
+  @Test void givenIntervalWhenDisjointedIntervalThenInterseccionIsSameIntervalThenFalse(){
 
-  //Tengo que completar el equals del conjunto con elementos
+    Interval interval1 = new Interval(new Min(this.left.getEquals()), new Max(this.right.getEquals()));
+    Interval interval2 = new Interval(new Min(this.right.getGreater()), new Max(this.left.getEquals() + this.right.getEquals()));
+
+    assertTrue(interval1.intersection(interval2).equals(interval1));
+    assertTrue(interval1.intersection(interval2).equals(interval2));
+
+  }
+
+
+
 
 }
