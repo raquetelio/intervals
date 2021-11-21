@@ -17,7 +17,13 @@ public class Interval {
 
 	public Interval intersection(Interval interval){
 
-		return (this.equals(interval)) ? new Interval(min, max) : null;
+		if (this.equals(interval))
+			return new Interval(min, max);
+		else if (!this.max.isWithin(interval.min.value))
+			return null;
+		else
+			return null;
+
 	}
 
 
