@@ -17,8 +17,10 @@ public class Interval {
 
 	public Interval intersection(Interval interval){
 
-		return null;
+		return (this.equals(interval)) ? new Interval(min, max) : null;
 	}
+
+
 
 	@Override
 	public int hashCode() {
