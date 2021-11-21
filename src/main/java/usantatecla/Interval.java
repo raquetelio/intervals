@@ -16,11 +16,16 @@ public class Interval {
 	}
 
 	public Interval intersection(Interval interval){
+		double intersection_max;
 
 		if (this.equals(interval))
 			return new Interval(min, max);
-		else if (this.max.isWithin(interval.min.value))
-			return new Interval(interval.min, interval.max);
+		else if (this.max.isWithin(interval.min.value)) {
+			intersection_max = interval.min.value + 1;
+			while (this.max.isWithin(intersection_max))
+				intersection_max++;
+			return new Interval(interval.min, new Max(intersection_max));
+		}
 		else
 			return null;
 
